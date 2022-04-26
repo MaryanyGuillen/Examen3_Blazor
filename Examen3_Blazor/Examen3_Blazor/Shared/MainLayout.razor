@@ -1,0 +1,30 @@
+﻿@inherits LayoutComponentBase
+
+<PageTitle>EXAMENFINAL</PageTitle>
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+         <div class="top-row px-4">
+        <AuthorizeView>
+            <Authorized>
+                <spam class="ml-md-auto">  
+                     Usuario Conectado: @context.User.Claims.First().Value
+                    <a href="/account/logout">Cerrar Sesión</a>
+                </spam>               
+            </Authorized>
+
+            <NotAuthorized>
+                <a href="Login" class="ml-md-auto">Iniciar Sesión</a>
+            </NotAuthorized>
+        </AuthorizeView>>  
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>

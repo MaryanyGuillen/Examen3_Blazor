@@ -1,0 +1,23 @@
+﻿@page "/"
+
+<AuthorizeView Roles="ADMINISTRADOR">
+    <Authorized Context="AuthenticationState">
+        <h1>Bienvenido administrador</h1>
+        <br  >
+        <h2>Examen final, hasta luego... </h2>
+    </Authorized>
+</AuthorizeView>
+
+<AuthorizeView Roles="USUARIO">
+    <Authorized Context="AuthenticationState">
+        <h1>Bienvenido usuario</h1>
+         <br  >
+        <h2>Examen final, hasta luego... </h2>
+    </Authorized>
+</AuthorizeView>
+
+<AuthorizeView>
+    <NotAuthorized>
+        <h2>Para acceder a la aplicación tiene que registrarse</h2>
+    </NotAuthorized> 
+</AuthorizeView>
